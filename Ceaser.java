@@ -1,5 +1,5 @@
 import java.util.*;
-
+import java.io.*;
 public class Ceaser {
    public static void main(String[] args) {
        //Creates input
@@ -15,9 +15,14 @@ public class Ceaser {
        //creates output
        for(int i = 0; i<PreCipher.length(); i++){
             int temp = alpha.indexOf(PreCipher.charAt(i));
-            temp=temp+change;
-            temp=temp%26;
-            PostCipher += alpha.charAt(temp);
+            String val = "" + PreCipher.charAt(i);
+            if(alpha.contains(val)==true){
+                temp=temp+change;
+                temp=temp%26;
+                PostCipher += alpha.charAt(temp);
+            }else{
+                PostCipher+=PreCipher.charAt(i);
+            }
        }
        System.out.println("Ciphered String: " + PostCipher);
    } 
