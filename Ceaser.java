@@ -19,6 +19,9 @@ public class Ceaser {
             if(alpha.contains(val)==true){
                 temp=temp+change;
                 temp=temp%26;
+                while(temp<0){
+                    temp=temp+26;
+                }
                 PostCipher += alpha.charAt(temp);
             }else{
                 PostCipher+=PreCipher.charAt(i);
